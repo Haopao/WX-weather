@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#2d2f3b",
+    "navigationBarTitleText": "极简天气",
+    "navigationBarTextStyle":"white"
+  }
+}

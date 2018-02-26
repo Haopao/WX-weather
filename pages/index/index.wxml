@@ -1,0 +1,43 @@
+<view class="container">
+    <view class="weather-card">
+        <view class="today {{weather[0].weather}}">
+            <view class="top">
+               <view class="range">{{weather[0].range}}</view>
+               <view class="refresh" bindtap="LoadWeather">
+                   <image src="../../image/white/refresh.png"/>
+               </view>
+            </view>
+            <view class="middle">
+               <image src="../../image/white/{{weather[0].weather}}.png"/>
+            </view>
+            <view class="bottom">
+               <view class="temp">{{weather[0].temp}}</view>
+               <view class="city-time">
+                  <view class="day">{{weather[0].day}}</view>
+                  <view class="city">{{weather[0].city}},CN</view>
+               </view>
+            </view>
+        </view>
+        <view class="other">
+            <scroll-view scroll-x="true">
+                <block wx:for="{{weather}}">
+                    <view class="scroll-view-item" wx:if="{{index > 0}}">
+                        <view class="top aligncenter">{{item.day}}</view>
+                        <view class="middle aligncenter">
+                            <image src="../../image/black/{{item.weather}}.png"></image>
+                        </view>
+                        <view class="bottom aligncenter">{{item.range}}</view>
+                    </view>
+                </block>
+            </scroll-view>
+        </view>
+    </view>
+
+    <view class="body-view">
+        <loading hidden="{{hidden}}">
+            加载中...
+        </loading>
+    </view>
+
+
+</view>
